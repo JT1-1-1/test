@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion PFA - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Logo PFA" id="logo">
+                <a href="index.html">GestionPFA</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#reviews">Avis</a></li>
+                <li><a href="#team">L'Équipe</a></li>
+                </ul>
+            <div class="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Bienvenue sur la Plateforme de Gestion des PFA</h1>
+                <p>Simplifiez la formation des binômes, la gestion des sujets et la communication entre étudiants et encadrants.</p>
+                <a href="login.html" class="cta-button" id="hero-cta-button">Commencer</a>
+            </div>
+        </section>
+
+        <section id="about" class="info-section">
+            <div class="container">
+                <h2>À Propos du Projet</h2>
+                <p>Cette application web est conçue pour optimiser et centraliser toutes les étapes relatives aux Projets de Fin d'Année (PFA). Notre objectif est de fournir une interface intuitive et efficace pour chaque acteur impliqué.</p>
+                <h3>Objectifs Principaux :</h3>
+                <ul>
+                    <li>Faciliter la création et la gestion des binômes par les étudiants.</li>
+                    <li>Permettre aux professeurs de publier, gérer et suivre les sujets de PFA.</li>
+                    <li>Offrir un espace de communication et d'échange dédié entre étudiants et enseignants.</li>
+                    <li>Fournir à l’administrateur un tableau de bord complet pour la gestion globale du système.</li>
+                    <li>Valoriser l’expérience utilisateur grâce à une interface claire, informative et dynamique.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Fonctionnalités Clés</h2>
+                <div class="feature-grid">
+                    <div class="feature-item card">
+                        <img src="images/icon-binomes.svg" alt="Gestion Binômes Icon" class="feature-icon">
+                        <h3>Gestion des Binômes</h3>
+                        <p>Les étudiants peuvent proposer, accepter ou annuler des formations de binômes, et consulter la liste des camarades disponibles.</p>
+                    </div>
+                    <div class="feature-item card">
+                        <img src="images/icon-sujets.svg" alt="Gestion Sujets Icon" class="feature-icon">
+                        <h3>Gestion des Sujets par les Professeurs</h3>
+                        <p>Les enseignants ajoutent des sujets, définissent les prérequis, le nombre de binômes, et valident les candidatures.</p>
+                    </div>
+                    <div class="feature-item card">
+                        <img src="images/icon-communication.svg" alt="Communication Icon" class="feature-icon">
+                        <h3>Communication Facilitée</h3>
+                        <p>Une messagerie intégrée ou un système de commentaires par sujet pour des échanges fluides et des notifications en temps réel.</p>
+                    </div>
+                    <div class="feature-item card">
+                        <img src="images/icon-admin.svg" alt="Admin Dashboard Icon" class="feature-icon">
+                        <h3>Tableau de Bord Administrateur</h3>
+                        <p>Gestion centralisée des comptes, des binômes, des sujets, visualisation des statistiques et modération du contenu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <h2>Commentaires & Avis</h2>
+                <div class="reviews-container" id="reviews-container">
+                    </div>
+                <div id="add-review-form-container" class="card" style="display:none;">
+                    <h3>Laisser un Avis</h3>
+                    <form id="review-form">
+                        <div class="form-group">
+                            <label for="review-name">Votre Nom (affiché) :</label>
+                            <input type="text" id="review-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-rating">Note :</label>
+                            <select id="review-rating" name="rating" required>
+                                <option value="5">★★★★★ (Excellent)</option>
+                                <option value="4">★★★★☆ (Très Bien)</option>
+                                <option value="3">★★★☆☆ (Bien)</option>
+                                <option value="2">★★☆☆☆ (Moyen)</option>
+                                <option value="1">★☆☆☆☆ (Insuffisant)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="review-comment">Commentaire :</label>
+                            <textarea id="review-comment" name="comment" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Soumettre l'Avis</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="team-section">
+            <div class="container">
+                <h2>Notre Équipe de Développement</h2>
+                <div class="team-container" id="team-container">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>PFA Binômes</h3>
+                <p>Plateforme de gestion des projets de fin d'année facilitant la création de binômes et le suivi des projets pour les étudiants et les encadrants.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Recherche de binômes</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Sujets disponibles</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Espace enseignants</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p>Campus Universitaire,</p>
+                        <p>Rue des Sciences, 75000</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <p>+33 01 23 45 67 89</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@pfa-binomes.fr</p>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Inscrivez-vous pour recevoir les dernières informations sur les projets et les délais importants.</p>
+                <div class="newsletter">
+                    <form action="#" method="post">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 PFA Binômes | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a> | <a href="#">Conditions d'utilisation</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

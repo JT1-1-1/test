@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Étudiant - Gestion PFA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css"> <link rel="stylesheet" href="css/student.css">   </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Logo PFA" id="logo">
+                <a href="index.html">GestionPFA</a>
+            </div>
+            <ul class="nav-links">
+                </ul>
+            <div class="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="dashboard-page">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3 id="student-name-sidebar">Nom Étudiant</h3>
+                <span class="user-role">Espace Étudiant</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" data-section="my-binome" class="active">Mon Binôme</a></li>
+                    <li><a href="#" data-section="available-students">Étudiants Disponibles</a></li>
+                    <li><a href="#" data-section="project-subjects">Sujets de PFA</a></li>
+                    <li><a href="#" data-section="my-applications">Mes Candidatures</a></li>
+                    <li><a href="#" data-section="messages">Messagerie & Notifications</a></li>
+                    <li><a href="profile.html" data-section="profile">Mon Profil</a></li> </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="my-binome-section" class="content-section active">
+                <h2>Mon Binôme</h2>
+                <div id="binome-status-container" class="card">
+                    <p>Chargement des informations du binôme...</p>
+                </div>
+                <div id="binome-requests-container" class="card" style="margin-top:20px;">
+                    <h4>Demandes de binôme reçues :</h4>
+                    <ul id="received-binome-requests" class="requests-list">
+                        </ul>
+                    <h4>Demandes de binôme envoyées :</h4>
+                    <ul id="sent-binome-requests" class="requests-list">
+                        </ul>
+                </div>
+            </section>
+
+            <section id="available-students-section" class="content-section">
+                <h2>Étudiants Disponibles (sans binôme)</h2>
+                <div class="filters">
+                    <input type="text" id="search-student-name" placeholder="Rechercher par nom...">
+                    </div>
+                <div id="students-list-container" class="grid-container">
+                    </div>
+            </section>
+
+            <section id="project-subjects-section" class="content-section">
+                <h2>Sujets de PFA Disponibles</h2>
+                <div class="filters">
+                    <input type="text" id="search-subject-title" placeholder="Rechercher par titre...">
+                    <select id="filter-subject-teacher">
+                        <option value="">Tous les enseignants</option>
+                        </select>
+                </div>
+                <div id="subjects-grid-container" class="grid-container">
+                    </div>
+            </section>
+
+            <section id="my-applications-section" class="content-section">
+                <h2>Mes Candidatures aux Sujets</h2>
+                <table class="dashboard-table" id="student-applications-table">
+                    <thead>
+                        <tr>
+                            <th>Titre du Sujet</th>
+                            <th>Enseignant</th>
+                            <th>Date de Candidature</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-applications-list">
+                        </tbody>
+                </table>
+                 <p id="no-applications-message" style="display:none;">Vous n'avez postulé à aucun sujet pour le moment.</p>
+            </section>
+
+            <section id="messages-section" class="content-section">
+                <h2>Messagerie & Notifications</h2>
+                <div class="notifications-container card">
+                    <h4>Notifications Récentes</h4>
+                    <ul id="student-notifications-list">
+                        </ul>
+                    <p id="no-notifications-message" style="display:none;">Aucune nouvelle notification.</p>
+                </div>
+                <div class="messages-placeholder card" style="margin-top: 20px;">
+                    <p>La fonctionnalité de messagerie directe sera bientôt disponible.</p>
+                    <p>Pour l'instant, veuillez utiliser les commentaires sur les sujets ou contacter directement vos enseignants/camarades par les moyens habituels.</p>
+                </div>
+            </section>
+
+            <section id="profile-section" class="content-section">
+                <h2>Mon Profil</h2>
+                <p>La page de gestion du profil sera implémentée ici. (Redirection vers `profile.html`)</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/student.js"></script>
+</body>
+</html>
