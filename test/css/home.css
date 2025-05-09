@@ -1,0 +1,196 @@
+/* css/home.css */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 90, 156, 0.7), rgba(0, 90, 156, 0.7)), url('../images/hero-banner.jpg') no-repeat center center/cover; /* Ajoutez une image de fond appropriée */
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-section .cta-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+.hero-section .cta-button:hover {
+    background-color: #ffda6a;
+    color: var(--primary-color);
+}
+
+/* Info Section (À Propos) */
+.info-section {
+    padding: 60px 0;
+    background-color: var(--card-bg);
+}
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.info-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.info-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Features Section */
+.features-section {
+    padding: 60px 0;
+}
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.feature-item {
+    text-align: center;
+}
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    /* Styles pour les SVG si besoin, ex: fill color */
+    color: var(--secondary-color); /* Pour que le fill des SVG s'applique */
+}
+.feature-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 60px 0;
+    background-color: var(--light-gray);
+}
+.reviews-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.review-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+.review-name {
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+.review-rating {
+    color: var(--accent-color); /* Étoiles en jaune */
+    font-size: 1.1rem;
+}
+.review-comment {
+    font-style: italic;
+    color: var(--dark-gray);
+}
+
+#add-review-form-container h3 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Team Section */
+.team-section {
+    padding: 60px 0;
+}
+.team-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+.team-member-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+}
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid var(--secondary-color);
+}
+.team-member-name {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.team-member-role {
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+/* Responsive pour la section hero et features */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 15px;
+        min-height: auto;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .feature-grid, .reviews-container, .team-container {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+}

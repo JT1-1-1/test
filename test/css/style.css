@@ -1,0 +1,513 @@
+/* css/style.css */
+:root {
+    --primary-color: #005A9C; /* Un bleu institutionnel */
+    --secondary-color: #00A1E0; /* Un bleu plus clair pour les accents */
+    --accent-color: #FFC107; /* Jaune pour les CTA ou highlights */
+    --background-color: #f4f7f6;
+    --text-color: #333333;
+    --heading-font: 'Montserrat', sans-serif; /* Assurez-vous d'importer cette police ou choisissez une autre */
+    --body-font: 'Roboto', sans-serif;    /* Assurez-vous d'importer cette police ou choisissez une autre */
+    --card-bg: #ffffff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --light-gray: #e9ecef;
+    --dark-gray: #6c757d;
+}
+
+/* Importation des polices (exemple avec Google Fonts) - Ajoutez cela en haut de votre CSS ou dans le <head> HTML */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 0; /* Ajustez si vous préférez les puces à l'extérieur */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img#logo {
+    height: 45px;
+    margin-right: 12px;
+    /* Si votre logo est blanc sur fond transparent, vous pourriez avoir besoin d'un filtre ou d'une version adaptée */
+    /* filter: brightness(0) invert(1);  Pour rendre un logo noir en blanc */
+}
+
+.nav-logo a {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: var(--heading-font);
+}
+.nav-logo a:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { /* Ajoutez la classe active si besoin via JS */
+    width: 100%;
+}
+
+
+.nav-login-btn, .nav-dashboard-btn, .nav-logout-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color) !important; /* Important pour surcharger la couleur de lien standard */
+    padding: 0.6rem 1.2rem !important;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav-login-btn:hover, .nav-dashboard-btn:hover, .nav-logout-btn:hover {
+    background-color: #ffda6a; /* Un jaune un peu plus clair au survol */
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+}
+.nav-login-btn::after, .nav-dashboard-btn::after, .nav-logout-btn::after {
+    display: none !important; /* Pas de soulignement pour les boutons */
+}
+
+
+.burger-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Boutons Globaux */
+.cta-button, .submit-btn, .action-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: var(--body-font);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover, .submit-btn:hover, .action-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.cta-button.secondary, .submit-btn.secondary, .action-btn.secondary {
+    background-color: var(--secondary-color);
+}
+.cta-button.secondary:hover, .submit-btn.secondary:hover, .action-btn.secondary:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* Cartes */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Formulaires */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(0, 161, 224, 0.2);
+}
+
+.error-message {
+    color: #D8000C; /* Rouge erreur */
+    background-color: #FFD2D2; /* Fond rouge clair */
+    border: 1px solid #D8000C;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+}
+
+.success-message { /* Pour les messages de succès */
+    color: #270;
+    background-color: #DFF2BF;
+    border: 1px solid #4F8A10;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+}
+
+
+/* Footer */
+.site-footer {
+    background-color: #333333;
+    color: #f0f0f0; /* Gris clair pour le texte du footer */
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto; /* Sticky footer */
+    font-size: 0.9rem;
+}
+.site-footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) { /* Point de rupture pour tablette */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 73px; /* Hauteur de la navbar */
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-links a::after { /* Pas de soulignement animé en mode mobile vertical */
+        display: none;
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+    .nav-links .nav-login-btn,
+    .nav-links .nav-dashboard-btn,
+    .nav-links .nav-logout-btn { /* Les boutons prennent toute la largeur */
+        display: block;
+        margin: 0.5rem auto;
+        width: calc(100% - 2rem); /* S'adapte au padding */
+        text-align: center;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) { /* Point de rupture pour mobile */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+
+    .container {
+        width: 95%;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+     .nav-logo a {
+        font-size: 1.4rem;
+    }
+    .nav-logo img#logo {
+        height: 40px;
+    }
+}
+
+.footer {
+   
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 3rem 0 1rem;
+     margin-top: auto;
+    
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    color: var(--background-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: var(--background-color);
+    bottom: -8px;
+    left: 0;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-links i {
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.contact-info {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--light-gray);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--background-color);
+    transform: translateY(-3px);
+}
+
+.newsletter {
+    margin-top: 20px;
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.newsletter button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #3a75a3;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-bottom a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}

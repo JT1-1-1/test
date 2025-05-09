@@ -1,0 +1,99 @@
+/* css/student.css */
+
+/* Section Mon Binôme */
+#binome-status-container p, #binome-status-container ul li {
+    margin-bottom: 10px;
+}
+#binome-status-container .binome-partner {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.requests-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+.requests-list li:last-child {
+    border-bottom: none;
+}
+.requests-list button {
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+/* Grids pour étudiants et sujets */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Carte Étudiant */
+.student-card, .subject-card { /* Utilisation de .card de style.css comme base */
+    padding: 20px;
+}
+.student-card h4, .subject-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.student-card p, .subject-card p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+.student-card .student-email {
+    color: var(--dark-gray);
+    font-style: italic;
+}
+.student-card .action-btn {
+    margin-top: 10px;
+}
+
+/* Carte Sujet */
+.subject-card .subject-teacher {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+}
+.subject-card .subject-details strong {
+    color: var(--text-color);
+}
+.subject-card .subject-prerequisites {
+    background-color: #e9ecef;
+    padding: 8px;
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+}
+
+/* Mes candidatures */
+#student-applications-table .status-pending { color: #ffc107; font-weight: bold;}
+#student-applications-table .status-accepted { color: #28a745; font-weight: bold;}
+#student-applications-table .status-rejected { color: #dc3545; font-weight: bold;}
+
+/* Notifications */
+.notifications-container ul li {
+    padding: 10px;
+    background-color: var(--light-gray);
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+}
+
+/* Boutons d'action spécifiques */
+.btn-propose, .btn-apply {
+    background-color: var(--secondary-color);
+}
+.btn-propose:hover, .btn-apply:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-cancel, .btn-modify, .btn-withdraw {
+    background-color: var(--dark-gray);
+}
+.btn-cancel:hover, .btn-modify:hover, .btn-withdraw:hover {
+    background-color: #5a6268;
+}
+
+/* Modals (si vous les implémentez plus tard) */
+/*.modal {
+    Styles pour les pop-ups de confirmation, etc. 
+}*/

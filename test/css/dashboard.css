@@ -1,0 +1,197 @@
+/* css/dashboard.css */
+
+.dashboard-page {
+    display: flex;
+    min-height: calc(100vh - 73px); /* Hauteur de la navbar déduite */
+    /* Le footer sera géré par la page elle-même si besoin, ou on peut l'exclure des dashboards */
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #343a40; /* Gris foncé pour la sidebar */
+    color: #f8f9fa; /* Texte clair */
+    padding: 25px 15px;
+    transition: width 0.3s ease;
+    min-height: calc(100vh - 73px); /* Pour qu'elle prenne toute la hauteur moins la navbar */
+}
+
+.sidebar-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #495057; /* Séparateur */
+    text-align: center;
+}
+
+.sidebar-header h3 {
+    color: #e9ecef; /* Titre un peu plus clair */
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+.sidebar-header .user-role {
+    font-size: 0.9rem;
+    color: var(--secondary-color); /* Bleu clair pour le rôle */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 12px 15px;
+    color: #ced4da; /* Liens gris clair */
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+    background-color: var(--primary-color); /* Bleu primaire au survol/actif */
+    color: white;
+}
+.sidebar-nav li a.active {
+    font-weight: bold;
+}
+
+/* Contenu Principal du Dashboard */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--background-color); /* Fond général de la page */
+    overflow-y: auto; /* Permet le scroll si le contenu dépasse */
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+.content-section {
+    display: none; /* Caché par défaut, affiché par JS */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tableaux dans les dashboards */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Pour que le border-radius s'applique aux coins de la table */
+}
+
+.dashboard-table th,
+.dashboard-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.dashboard-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-family: var(--heading-font);
+}
+
+.dashboard-table tbody tr:hover {
+    background-color: #f1f1f1; /* Léger fond au survol des lignes */
+}
+
+.dashboard-table td .action-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    margin-right: 5px;
+}
+.action-btn.edit { background-color: #ffc107; color: #333;}
+.action-btn.delete { background-color: #dc3545;}
+.action-btn.view { background-color: #17a2b8;}
+.action-btn.approve { background-color: #28a745; }
+.action-btn.reject { background-color: #dc3545; }
+
+
+/* Filtres et recherche */
+.filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.filters input[type="text"], .filters select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+/* Responsive pour la sidebar */
+@media (max-width: 992px) {
+    .dashboard-page {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        min-height: auto; /* Hauteur auto en mode colonne */
+        /* On pourrait vouloir un menu horizontal ou un burger menu pour la sidebar ici */
+        display: flex; /* Pour aligner les éléments de la sidebar horizontalement */
+        justify-content: space-around; /* Espace les liens */
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .sidebar-header {
+        display: none; /* Cacher le header de la sidebar en mode mobile/tablette compact */
+    }
+    .sidebar-nav ul {
+        display: flex; /* Liens en ligne */
+        width: 100%;
+        justify-content: space-around;
+    }
+    .sidebar-nav li {
+        flex-grow: 1; /* Chaque lien prend une part égale */
+        text-align: center;
+    }
+    .sidebar-nav li a {
+        margin-bottom: 0;
+        border-radius: 0; /* Pas de coins arrondis si c'est une barre */
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .main-content h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-nav ul {
+        flex-direction: column; /* Revenir en colonne si trop de liens pour mobile */
+    }
+    .sidebar-nav li a {
+        border-bottom: 1px solid #495057;
+    }
+     .sidebar-nav li:last-child a {
+        border-bottom: none;
+    }
+}

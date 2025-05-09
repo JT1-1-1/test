@@ -1,0 +1,54 @@
+/* css/teacher.css */
+
+/* Mes Sujets */
+#teacher-subjects-list-container .subject-card { /* Hérite de .subject-card dans student.css ou dashboard.css si globalisé */
+    border-left: 5px solid var(--secondary-color); /* Accent pour les sujets du prof */
+}
+#teacher-subjects-list-container .subject-card h5 { /* Si on utilise h5 pour le titre de la carte du sujet */
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+#teacher-subjects-list-container .subject-stats {
+    font-size: 0.85rem;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+#teacher-subjects-list-container .subject-actions .action-btn {
+    margin-right: 5px;
+    margin-top: 5px; /* Pour espacer si les boutons passent à la ligne */
+}
+
+
+/* Formulaire d'ajout/modification de sujet */
+#add-subject-form {
+    max-width: 700px;
+    margin: 0 auto; /* Centrer le formulaire s'il est plus petit que le conteneur */
+}
+
+/* Tableau des candidatures */
+#teacher-applications-table .student-names {
+    font-weight: normal;
+}
+#teacher-applications-table .status-pending { color: #ffc107; font-weight: bold;}
+#teacher-applications-table .status-accepted { color: #28a745; font-weight: bold;}
+#teacher-applications-table .status-rejected { color: #dc3545; font-weight: bold;}
+
+
+/* Notifications Enseignant (similaire à étudiant) */
+.notifications-container ul li { /* Peut être globalisé dans dashboard.css */
+    padding: 10px;
+    background-color: var(--light-gray);
+    border-left: 4px solid var(--secondary-color);
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+}
+
+#cancel-edit-subject-btn {
+    background-color: var(--dark-gray);
+}
+#cancel-edit-subject-btn:hover {
+    background-color: #5a6268;
+}

@@ -1,0 +1,55 @@
+/* css/auth.css */
+
+.auth-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 73px - 86px); /* 100vh - hauteur navbar - hauteur footer */
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.auth-container .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-container .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-top: 10px; /* Espace avant le message d'erreur potentiel */
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour les messages dans le conteneur dédié */
+#login-message-container .error-message,
+#login-message-container .success-message {
+    padding: 12px;
+    text-align: center;
+}
